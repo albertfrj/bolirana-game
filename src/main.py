@@ -1,13 +1,13 @@
 import pygame
 import sys
-import os  # Para construir rutas relativas
+import os  
 
-# Ruta base de los recursos
+# Rutas relativas archivos 
 BASE_DIR = os.path.dirname(__file__)
 IMAGES_DIR = os.path.join(BASE_DIR, "../assets/images")
 SOUNDS_DIR = os.path.join(BASE_DIR, "../assets/sounds")
 
-# Inicialización
+
 pygame.init()
 
 ANCHO, ALTO = 800, 600
@@ -17,13 +17,9 @@ NEGRO = (0, 0, 0)
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Boliranota - TEst")
 fuente = pygame.font.SysFont("Arial", 20)
-
-# Cargar fondo e imagen con rutas actualizadas
 fondo_path = os.path.join(IMAGES_DIR, "img.jpeg")
 fondo = pygame.image.load(fondo_path)
 fondo = pygame.transform.scale(fondo, (ANCHO, ALTO))
-
-# Cargar sonido con ruta actualizada
 sonido_path = os.path.join(SOUNDS_DIR, "frog.mp3")
 sonido_punto = pygame.mixer.Sound(sonido_path)
 
